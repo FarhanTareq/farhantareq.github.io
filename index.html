@@ -3,134 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farhan Tareq | Portfolio</title>
+    <title>Farhan Tareq | Founder of MathSics</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-        .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Hind+Siliguri:wght@400;600&display=swap');
+        
+        body { font-family: 'Poppins', 'Hind Siliguri', sans-serif; scroll-behavior: smooth; background: #0a0f1d; color: white; overflow-x: hidden; }
+        
+        /* Premium Background Gradient */
+        .hero-bg { background: radial-gradient(circle at top right, #1e3a8a, #0a0f1d 80%); }
+        
+        /* Floating Animation for Image */
+        .floating { animation: float 5s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+
+        /* Glassmorphism Effect */
+        .glass-card { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(20px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+        }
+
+        /* 3-Dot Menu Animation */
+        #dotMenu { display: none; }
+        #dotMenu.active { 
+            display: block; 
+            animation: menuFade 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        @keyframes menuFade {
+            from { opacity: 0; transform: scale(0.9) translateY(-10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        /* Hide Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #0a0f1d; }
+        ::-webkit-scrollbar-thumb { background: #1e3a8a; border-radius: 10px; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="hero-bg min-h-screen">
 
-    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-blue-700">Farhan Tareq</h1>
-            <div class="space-x-6 hidden md:block">
-                <a href="#about" class="hover:text-blue-600">About</a>
-                <a href="#experience" class="hover:text-blue-600">Experience</a>
-                <a href="#skills" class="hover:text-blue-600">Skills</a>
-                <a href="#contact" class="hover:text-blue-600">Contact</a>
-            </div>
+    <div class="fixed top-6 right-6 z-[100]">
+        <button onclick="toggleMenu()" class="w-12 h-12 glass-card rounded-full flex items-center justify-center text-white shadow-2xl active:scale-90 transition-transform">
+            <i class="fas fa-ellipsis-v text-xl"></i>
+        </button>
+        
+        <div id="dotMenu" class="absolute right-0 mt-4 w-52 glass-card rounded-[24px] overflow-hidden shadow-2xl">
+            <a href="#about" class="block px-6 py-4 hover:bg-white/10 border-b border-white/5 font-medium transition">About Me</a>
+            <a href="#community" class="block px-6 py-4 hover:bg-white/10 border-b border-white/5 font-medium transition">Community</a>
+            <a href="#contact" class="block px-6 py-4 hover:bg-white/10 border-b border-white/5 font-medium transition">Contact</a>
+            <a href="mailto:farhantareqofficial@gmail.com?subject=Appointment Request" class="block px-6 py-4 hover:bg-white/10 font-bold text-blue-400 transition">Appointment</a>
         </div>
-    </nav>
+    </div>
 
-    <section class="hero-gradient min-h-screen flex items-center pt-20 text-white">
-        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-            <div class="order-2 md:order-1">
-                <h2 class="text-xl mb-2">Hello, I'm</h2>
-                <h1 class="text-5xl md:text-7xl font-bold mb-4">Farhan Tareq</h1>
-                <p class="text-lg mb-6 opacity-90 text-justify">
-                    Founder & CEO of <strong>MathSics</strong>. A passionate CSE Student, Physics Educator, and Tech Enthusiast based in Dhaka, Bangladesh. I love solving problems and automating the future.
+    <section id="about" class="pt-16 md:pt-32 pb-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="flex items-center justify-between gap-4 md:gap-12 mb-10">
+                
+                <div class="w-2/3 md:w-3/5 space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-[10px] md:text-xs font-bold tracking-widest uppercase">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                        Founder & CEO, MathSics
+                    </div>
+                    
+                    <h1 class="text-3xl md:text-8xl font-black leading-tight tracking-tighter">
+                        FARHAN <br> 
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">TAREQ</span>
+                    </h1>
+                </div>
+
+                <div class="w-1/3 md:w-2/5 flex justify-end">
+                    <div class="relative w-24 h-24 md:w-80 md:h-80 group">
+                        <div class="absolute -inset-2 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                        <div class="relative w-full h-full rounded-full md:rounded-[40px] overflow-hidden border-2 md:border-4 border-white/10 shadow-2xl floating">
+                            <img src="DSC_44.JPG" alt="Farhan Tareq" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-2xl space-y-8">
+                <p class="text-gray-400 text-sm md:text-xl leading-relaxed text-justify md:text-left">
+                    Founder & CEO of <strong>MathSics</strong>. A passionate CSE Student at <strong>Uttara University</strong>, Physics Educator, and Tech Enthusiast. I love solving complex problems and automating the future of education.
                 </p>
-                <div class="flex gap-4">
-                    <a href="farhan's_cv (1).pdf" download class="bg-white text-blue-700 px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-gray-100 transition">
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="farhan's_cv (1).pdf" download class="px-8 py-4 bg-white text-blue-950 font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-blue-50 transition shadow-xl active:scale-95">
                         <i class="fas fa-download"></i> Download CV
                     </a>
-                    <a href="#contact" class="border-2 border-white px-6 py-3 rounded-full font-bold hover:bg-white hover:text-blue-700 transition">
-                        Hire Me
+                    <a href="#contact" class="px-8 py-4 glass-card font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-white/5 transition active:scale-95">
+                        <i class="fas fa-paper-plane"></i> Hire Me
                     </a>
                 </div>
             </div>
-            <div class="order-1 md:order-2 flex justify-center">
-                <div class="relative group">
-    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-    
-    <img src="DSC_44.JPG" 
-         alt="Farhan Tareq" 
-         class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl border-4 border-white shadow-2xl 
-                transform transition duration-500 ease-in-out 
-                hover:scale-105 hover:rotate-2 hover:shadow-blue-500/50">
-            </div>
+
         </div>
     </section>
 
-    <section id="experience" class="py-20 max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Professional Experience</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-600">
-                <span class="text-blue-600 font-bold">2024 - Present</span>
-                <h3 class="text-xl font-bold">Founder & CEO | MathSics</h3>
-                <p class="mt-2 text-gray-600 italic">Leading academic care for classes 6-12 (Online & Offline).</p>
-                <div class="mt-4 flex gap-3 text-2xl">
-                    <a href="https://www.facebook.com/mathsicsbd" target="_blank" class="text-blue-600"><i class="fab fa-facebook"></i></a>
-                    <a href="https://youtube.com/@mathsicsbd" target="_blank" class="text-red-600"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-600">
-                <span class="text-blue-600 font-bold">2024 - Present</span>
-                <h3 class="text-xl font-bold">Physics Teacher</h3>
-                <p class="mt-2 text-gray-600">Ucchash Academic & Admission Care (Jatrabari Branch). Specializing in SSC & HSC Physics.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="bg-gray-100 py-20">
-        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12">
-            <div>
-                <h2 class="text-3xl font-bold mb-8">Technical Skills</h2>
-                <div class="flex flex-wrap gap-3">
-                    <span class="bg-white px-4 py-2 rounded-lg shadow-sm font-semibold">C / C++</span>
-                    <span class="bg-white px-4 py-2 rounded-lg shadow-sm font-semibold">Python</span>
-                    <span class="bg-white px-4 py-2 rounded-lg shadow-sm font-semibold">AutoCAD</span>
-                    <span class="bg-white px-4 py-2 rounded-lg shadow-sm font-semibold">Latex</span>
-                    <span class="bg-white px-4 py-2 rounded-lg shadow-sm font-semibold">SolidWorks</span>
-                    <span class="bg-white px-4 py-2 rounded-lg shadow-sm font-semibold">Automation</span>
-                </div>
-                <h2 class="text-3xl font-bold mt-12 mb-8">Education</h2>
-                <div class="space-y-4">
-                    <div class="bg-white p-4 rounded-lg shadow-sm">
-                        <h4 class="font-bold text-blue-700">BSc in CSE (Ongoing)</h4>
-                        <p class="text-sm">Uttara University</p>
+    <section id="community" class="py-20 px-6 bg-[#080d1a]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-12 text-center tracking-tight">MathSics Community</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="https://youtube.com/@mathsicsbd" target="_blank" class="glass-card p-8 rounded-[35px] hover:border-red-500/50 transition-all duration-500 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition">
+                        <i class="fab fa-youtube text-9xl"></i>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm">
-                        <h4 class="font-bold text-blue-700">HSC (Alim) Science - GPA 5.00</h4>
-                        <p class="text-sm">Tamirul Millat Kamil Madrasah</p>
+                    <div class="flex items-center gap-6 mb-4">
+                        <i class="fab fa-youtube text-5xl text-red-600"></i>
+                        <h3 class="text-2xl font-bold">YouTube</h3>
                     </div>
-                </div>
-            </div>
-            <div class="bg-blue-700 text-white p-8 rounded-2xl shadow-xl">
-                <h2 class="text-3xl font-bold mb-6">Research Interests</h2>
-                <ul class="space-y-4">
-                    <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> Automation of Govt. Services</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> AI & Latest Tech</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> Satellite Networks</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> Flood Solutions for BD</li>
-                </ul>
+                    <p class="text-gray-400 text-sm md:text-base italic mb-6">Physics made simple. Join our digital classroom for conceptual clarity.</p>
+                    <span class="text-red-500 font-bold flex items-center gap-2 group-hover:gap-4 transition-all uppercase text-xs tracking-widest">Subscribe Now <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.facebook.com/mathsicsbd" target="_blank" class="glass-card p-8 rounded-[35px] hover:border-blue-500/50 transition-all duration-500 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition">
+                        <i class="fab fa-facebook text-9xl"></i>
+                    </div>
+                    <div class="flex items-center gap-6 mb-4">
+                        <i class="fab fa-facebook text-5xl text-blue-600"></i>
+                        <h3 class="text-2xl font-bold">Facebook</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm md:text-base italic mb-6">Get latest updates, class notes and exam suggestions for SSC & HSC.</p>
+                    <span class="text-blue-500 font-bold flex items-center gap-2 group-hover:gap-4 transition-all uppercase text-xs tracking-widest">Join Community <i class="fas fa-arrow-right"></i></span>
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 max-w-3xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-4">Any Questions or Suggestions?</h2>
-        <p class="text-gray-600 mb-8">আপনার যদি কোনো প্রশ্ন থাকে বা আমাকে কোনো পরামর্শ দিতে চান, নিচের বাটনে ক্লিক করে সরাসরি মেইল পাঠাতে পারেন।</p>
-        
-        <a href="mailto:farhantareqofficial@gmail.com?subject=Suggestion/Question for Farhan&body=Hi Farhan," 
-           class="inline-flex items-center gap-3 bg-blue-600 text-white px-10 py-4 rounded-full text-xl font-bold hover:bg-blue-800 transition shadow-lg">
-            <i class="fas fa-paper-plane"></i> Send Suggestion
-        </a>
-
-        <div class="mt-12 flex justify-center gap-6 text-gray-400">
-            <a href="https://linkedin.com/in/farhan-tareq" target="_blank" class="hover:text-blue-600"><i class="fab fa-linkedin fa-2x"></i></a>
-            <a href="mailto:farhantareqofficial@gmail.com" class="hover:text-red-500"><i class="fas fa-envelope fa-2x"></i></a>
-            <a href="tel:+8801516532286" class="hover:text-green-500"><i class="fas fa-phone-alt fa-2x"></i></a>
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-8 rounded-3xl text-center">
+                <i class="fas fa-graduation-cap text-3xl text-blue-400 mb-4"></i>
+                <h4 class="font-bold text-lg mb-2 text-white">Education</h4>
+                <p class="text-xs text-gray-500 uppercase tracking-tighter">BSc in CSE - Uttara University</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl text-center border-b-4 border-blue-600">
+                <i class="fas fa-briefcase text-3xl text-blue-400 mb-4"></i>
+                <h4 class="font-bold text-lg mb-2 text-white">Teaching</h4>
+                <p class="text-xs text-gray-500 uppercase tracking-tighter">Physics Teacher - Ucchash Care</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl text-center">
+                <i class="fas fa-lightbulb text-3xl text-blue-400 mb-4"></i>
+                <h4 class="font-bold text-lg mb-2 text-white">Research</h4>
+                <p class="text-xs text-gray-500 uppercase tracking-tighter">Govt. Service Automation & AI</p>
+            </div>
         </div>
     </section>
 
-    <footer class="py-10 border-t text-center text-gray-500 text-sm">
-        <p>&copy; 2025 Farhan Tareq. All rights reserved.</p>
+    <section id="contact" class="py-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto glass-card p-10 md:p-20 rounded-[40px] md:rounded-[60px] relative overflow-hidden">
+            <div class="absolute -top-20 -left-20 w-40 h-40 bg-blue-600/10 rounded-full blur-3xl"></div>
+            <h2 class="text-3xl md:text-6xl font-black mb-6 text-white leading-tight">Got a Suggestion?</h2>
+            <p class="text-gray-400 mb-10 text-sm md:text-xl">আপনার মতামত আমার পথচলার অনুপ্রেরণা। সরাসরি আমাকে মেইল পাঠাতে পারেন।</p>
+            
+            <a href="mailto:farhantareqofficial@gmail.com?subject=Suggestion from Portfolio" class="inline-flex items-center gap-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-10 py-5 rounded-2xl text-lg md:text-2xl font-black hover:scale-105 transition-all shadow-2xl active:scale-95">
+                <i class="fas fa-paper-plane"></i> Send Suggestion
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center">
+        <div class="flex justify-center gap-6 mb-6">
+            <a href="https://linkedin.com/in/farhan-tareq" target="_blank" class="text-gray-500 hover:text-white transition"><i class="fab fa-linkedin fa-lg"></i></a>
+            <a href="mailto:farhantareqofficial@gmail.com" class="text-gray-500 hover:text-white transition"><i class="fas fa-envelope fa-lg"></i></a>
+            <a href="tel:+8801516532286" class="text-gray-500 hover:text-white transition"><i class="fas fa-phone fa-lg"></i></a>
+        </div>
+        <p class="text-gray-600 text-[10px] tracking-[0.2em] uppercase font-bold">&copy; 2026 Farhan Tareq | Powered by MathSics</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('dotMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Close menu if clicked outside
+        window.addEventListener('click', function(e) {
+            const menu = document.getElementById('dotMenu');
+            const btn = document.querySelector('button');
+            if (!e.target.closest('button') && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
 
 </body>
 </html>
